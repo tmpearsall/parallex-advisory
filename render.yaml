@@ -1,0 +1,26 @@
+# Render Blueprint for Parallex. Create it in a Parallex-owned Render account
+# (not Osparna's): New > Blueprint > pick this repo.
+services:
+  - type: web
+    name: parallex-advisory
+    runtime: docker
+    plan: starter
+    healthCheckPath: /up
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: parallex-advisory-db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false   # paste from config/master.key (not in git)
+      - key: ADMIN_USER
+        value: troy
+      - key: ADMIN_PASSWORD
+        sync: false   # choose a long password; guards /admin
+      - key: RAILS_LOG_TO_STDOUT
+        value: "true"
+
+databases:
+  - name: parallex-advisory-db
+    plan: basic-256mb
+    postgresMajorVersion: "16"
