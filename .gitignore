@@ -1,0 +1,14 @@
+/.bundle
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/storage/*
+!/storage/.keep
+/public/assets
+/config/master.key
+/config/*.key
+.env*
+*.heic
+public/hero.jpg
+.DS_Store

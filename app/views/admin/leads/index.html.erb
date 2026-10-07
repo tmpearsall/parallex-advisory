@@ -1,0 +1,6 @@
+<div class="page"><div class="wrap">
+  <h1>Pipeline</h1>
+  <p><%= link_to "All", admin_root_path %> · <% Lead::STAGES.each do |s| %><%= link_to s.humanize, admin_root_path(stage: s) %> <% end %></p>
+  <table><tr><th>When</th><th>Name</th><th>Organization</th><th>Type</th><th>Stage</th></tr>
+  <% @leads.each do |l| %><tr><td><%= l.created_at.to_date %></td><td><%= link_to l.name, admin_lead_path(l) %></td><td><%= l.organization %></td><td><%= l.investor_type %></td><td><%= l.stage.humanize %></td></tr><% end %></table>
+</div></div>

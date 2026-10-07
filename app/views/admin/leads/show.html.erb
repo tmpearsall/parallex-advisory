@@ -1,0 +1,11 @@
+<div class="page"><div class="wrap prose">
+  <p><%= link_to "← Pipeline", admin_root_path %></p>
+  <h1><%= @lead.name %></h1>
+  <p><%= mail_to @lead.email %> · <%= @lead.organization %> <%= @lead.role_title %> · <%= @lead.investor_type %></p>
+  <p style="white-space:pre-wrap"><%= @lead.message %></p>
+  <%= form_with model: @lead, url: admin_lead_path(@lead), method: :patch do |f| %>
+    <%= f.label :stage %><%= f.select :stage, Lead::STAGES.map { |s| [s.humanize, s] } %>
+    <%= f.label :notes %><%= f.text_area :notes %>
+    <p><%= f.submit "Save", class: "btn" %></p>
+  <% end %>
+</div></div>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= content_for?(:title) ? "#{yield(:title)} · Parallex" : "Parallex — Technical leadership for investors" %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Technical diligence and fractional CTO leadership for family offices and the businesses they back.">
+  <link rel="icon" href="/logo-200.jpg">
+  <link rel="apple-touch-icon" href="/logo-200.jpg">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <%= stylesheet_link_tag "site", "data-turbo-track": "reload" %>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap bar">
+      <a class="brand" href="<%= root_path %>"><img class="mark" src="/logo-200.jpg" alt="Parallex" width="56" height="56"></a>
+      <nav>
+        <%= link_to "How I work", how_path %>
+        <%= link_to "About", about_path %>
+        <%= link_to "Request an introduction", new_introduction_path, class: "btn small" %>
+      </nav>
+    </div>
+  </header>
+  <main><%= yield %></main>
+  <footer class="foot">
+    <div class="wrap">
+      <span>© <%= Date.current.year %> Parallex LLC</span>
+      <span><%= link_to "Privacy", privacy_path %></span>
+    </div>
+  </footer>
+</body>
+</html>

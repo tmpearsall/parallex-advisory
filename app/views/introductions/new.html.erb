@@ -1,0 +1,16 @@
+<% content_for :title, "Request an introduction" %>
+<div class="page"><div class="wrap">
+  <h1>Request an introduction</h1>
+  <p class="prose">Tell me a little about you and what you are weighing. I read every note and reply personally.</p>
+  <%= form_with model: @lead, url: introduction_path, class: "intro" do |f| %>
+    <% if @lead.errors.any? %><div class="errors"><%= @lead.errors.full_messages.to_sentence %></div><% end %>
+    <%= f.text_field :website, class: "hp", tabindex: -1, autocomplete: "off" %>
+    <%= f.label :name, "Your name" %><%= f.text_field :name, required: true %>
+    <%= f.label :email, "Email" %><%= f.email_field :email, required: true %>
+    <%= f.label :organization, "Organization" %><%= f.text_field :organization %>
+    <%= f.label :investor_type, "Which best describes you?" %>
+    <%= f.select :investor_type, Lead::INVESTOR_TYPES, include_blank: true %>
+    <%= f.label :message, "What are you weighing?" %><%= f.text_area :message, required: true %>
+    <p><%= f.submit "Send", class: "btn" %></p>
+  <% end %>
+</div></div>
