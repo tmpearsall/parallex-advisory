@@ -2,6 +2,7 @@
   <p><%= link_to "← Pipeline", admin_root_path %></p>
   <h1><%= @lead.name %></h1>
   <p><%= mail_to @lead.email %> · <%= @lead.organization %> <%= @lead.role_title %> · <%= @lead.investor_type %></p>
+  <% if @lead.family_goal.present? %><h3>What the family is trying to build</h3><p style="white-space:pre-wrap"><%= @lead.family_goal %></p><h3>The deal</h3><% end %>
   <p style="white-space:pre-wrap"><%= @lead.message %></p>
   <%= form_with model: @lead, url: admin_lead_path(@lead), method: :patch do |f| %>
     <%= f.label :stage %><%= f.select :stage, Lead::STAGES.map { |s| [s.humanize, s] } %>

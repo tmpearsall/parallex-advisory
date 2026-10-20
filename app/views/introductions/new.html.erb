@@ -1,5 +1,5 @@
 <% content_for :title, "Request an introduction" %>
-<%= render "shared/page_hero", eyebrow: "Start here", title: "Request an introduction", lede: "Tell me a little about you and what you are weighing. I read every note and reply personally." %>
+<%= render "shared/page_hero", eyebrow: "Start here", title: "Request an introduction", lede: "Tell me about the family and what it is working toward. I read every note and reply personally." %>
 <div class="page"><div class="wrap split">
   <%= form_with model: @lead, url: introduction_path, class: "intro" do |f| %>
     <% if @lead.errors.any? %><div class="errors"><%= @lead.errors.full_messages.to_sentence %></div><% end %>
@@ -9,7 +9,10 @@
     <%= f.label :organization, "Organization" %><%= f.text_field :organization %>
     <%= f.label :investor_type, "Which best describes you?" %>
     <%= f.select :investor_type, Lead::INVESTOR_TYPES, include_blank: true %>
-    <%= f.label :message, "What are you weighing?" %><%= f.text_area :message, required: true %>
+    <%= f.label :family_goal, "What is the family trying to build?" %>
+    <p class="hint">Where would you like the family to be in ten years? The deal is meant to advance that.</p>
+    <%= f.text_area :family_goal, rows: 4 %>
+    <%= f.label :message, "What deal are you weighing, and how might it advance that?" %><%= f.text_area :message, required: true %>
     <p><%= f.submit "Send", class: "btn" %></p>
   <% end %>
 

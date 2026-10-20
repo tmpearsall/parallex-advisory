@@ -6,6 +6,10 @@ Organization: <%= @lead.organization %>
 Role: <%= @lead.role_title %>
 Type: <%= @lead.investor_type %>
 
+<% if @lead.family_goal.present? %>What the family is trying to build:
+<%= @lead.family_goal %>
+
+<% end %>The deal:
 <%= @lead.message %>
 
 Reply to this email to answer them directly.

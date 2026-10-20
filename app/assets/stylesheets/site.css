@@ -172,3 +172,5 @@ sup .cite{text-decoration:none;font-weight:600;color:var(--brass)}
 @media(max-width:640px){.posts{grid-template-columns:1fr}}
 @media(max-width:760px){nav a:not(.btn){display:none}section.block{padding:68px 0}.wrap{padding:0 20px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.hint{margin:-2px 0 8px;font-size:.92rem;color:var(--mute)}

@@ -8,5 +8,5 @@ class Lead < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :stage, inclusion: { in: STAGES }
   validates :name, :organization, :role_title, length: { maximum: 200 }
-  validates :message, length: { maximum: 5000 }
+  validates :message, :family_goal, length: { maximum: 5000 }
 end
