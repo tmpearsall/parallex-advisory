@@ -1,25 +1,67 @@
 <% content_for :title, "How I work" %>
-<div class="page"><div class="wrap prose">
-  <h1>How I work</h1>
-  <p>One conversation about one deal. If it isn't useful, you will know in an hour.</p>
+<section class="hero hero-page">
+  <div class="wrap">
+    <p class="eyebrow">How an engagement runs</p>
+    <h1>How I work</h1>
+    <p>One conversation about one deal. If it isn't useful, you will know in an hour.</p>
+  </div>
+</section>
 
-  <h3>1. A first conversation</h3>
-  <p>You tell me about the deal and the sponsor. I tell you whether technical diligence would change your decision, and what it would cover. There is no charge for this.</p>
+<div class="page how">
+  <div class="wrap how-grid">
+    <ol class="steps">
+      <li class="step">
+        <span class="n">1</span>
+        <div>
+          <h3>A first conversation</h3>
+          <p>You tell me about the deal and the sponsor. I tell you whether technical diligence would change your decision, and what it would cover.</p>
+          <span class="tag">No charge</span>
+        </div>
+      </li>
+      <li class="step">
+        <span class="n">2</span>
+        <div>
+          <h3>A fixed scope and fee, in writing</h3>
+          <p>I price every engagement on its own, after we talk, because no two deals are the same. Before any work starts you know what I will review, what I will not, how long it takes and what it costs. The agreement names the team, including any specialist I bring in, and every specialist signs a non-disclosure agreement.</p>
+          <span class="tag">Priced per engagement</span>
+        </div>
+      </li>
+      <li class="step">
+        <span class="n">3</span>
+        <div>
+          <h3>The review</h3>
+          <p>We read what the company has built, test what it claims, and ask the questions an engineer would ask that a sponsor's slides do not answer. Experts join as the deal requires. <%= link_to "Read how a review is done.", post_path("how-technical-diligence-is-done") %></p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="n">4</span>
+        <div>
+          <h3>A memo the whole family can read</h3>
+          <p>Plain language, no jargon. It says what is real and what is a demo, what breaks at scale, what it costs to fix, and what to ask next. I walk the principals through it on a call, and I answer the questions of whoever disagrees.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="n">5</span>
+        <div>
+          <h3>After the decision</h3>
+          <p>If you invest, I can stay on as a technical advisor on a monthly retainer, or lead the technology for a defined period inside the company and hand it to the team that stays.</p>
+          <span class="tag">Optional</span>
+        </div>
+      </li>
+    </ol>
 
-  <h3>2. A fixed scope and fee, in writing</h3>
-  <p>I price every engagement on its own, after we talk, because no two deals are the same. Before any work starts you know what I will review, what I will not, how long it takes and what it costs. The agreement names the team, including any specialist I bring in, and every specialist signs a non-disclosure agreement.</p>
+    <aside class="card discretion">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+      <h3>Discretion</h3>
+      <p>Your deal stays between us. I do not name clients, I do not share what one office tells me with another, and I do not use client information in any other work.</p>
+      <p>Parallex keeps client engagements separate from every other business I run, and anyone who works with me on your deal is bound by an NDA.</p>
+    </aside>
+  </div>
 
-  <h3>3. The review</h3>
-  <p>We read what the company has built, test what it claims, and ask the questions an engineer would ask that a sponsor's slides do not answer. Experts join as the deal requires. <%= link_to "Read how a review is done.", post_path("how-technical-diligence-is-done") %></p>
-
-  <h3>4. A memo the whole family can read</h3>
-  <p>Plain language, no jargon. It says what is real and what is a demo, what breaks at scale, what it costs to fix, and what to ask next. I walk the principals through it on a call, and I answer the questions of whoever disagrees.</p>
-
-  <h3>5. After the decision</h3>
-  <p>If you invest, I can stay on as a technical advisor on a monthly retainer, or lead the technology for a defined period inside the company and hand it to the team that stays.</p>
-
-  <h3>Discretion</h3>
-  <p>Your deal stays between us. I do not name clients, I do not share what one office tells me with another, and I do not use client information in any other work. Parallex keeps client engagements separate from every other business I run, and anyone who works with me on your deal is bound by an NDA.</p>
-
-  <p><%= link_to "Request an introduction", new_introduction_path, class: "btn" %></p>
-</div></div>
+  <div class="wrap">
+    <div class="cta-band">
+      <h3>Have a deal on the table?</h3>
+      <%= link_to "Request an introduction", new_introduction_path, class: "btn" %>
+    </div>
+  </div>
+</div>
