@@ -1,5 +1,5 @@
 # Render Blueprint for Parallex. Create it in a Parallex-owned Render account
-# (not Osparna's): New > Blueprint > pick this repo.
+# (not Osparna's) and a separate Supabase project: New > Blueprint > pick this repo.
 services:
   - type: web
     name: parallex-advisory
@@ -8,19 +8,23 @@ services:
     healthCheckPath: /up
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: parallex-advisory-db
-          property: connectionString
+        sync: false   # Parallex's own Supabase project (pooled connection string)
       - key: RAILS_MASTER_KEY
         sync: false   # paste from config/master.key (not in git)
       - key: ADMIN_USER
         value: troy
       - key: ADMIN_PASSWORD
         sync: false   # choose a long password; guards /admin
+      - key: LEAD_ALERT_TO
+        value: troy@parallexllc.com
+      - key: MAIL_FROM
+        value: Parallex <hello@parallexllc.com>
+      - key: SMTP_ADDRESS
+        sync: false   # SMTP provider host (Postmark, Resend, Google Workspace relay...)
+      - key: SMTP_USERNAME
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
       - key: RAILS_LOG_TO_STDOUT
         value: "true"
 
-databases:
-  - name: parallex-advisory-db
-    plan: basic-256mb
-    postgresMajorVersion: "16"

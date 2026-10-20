@@ -67,4 +67,14 @@ Rails.application.configure do
   #
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  # Lead alerts go out over any SMTP provider (SMTP_ADDRESS, SMTP_USERNAME, SMTP_PASSWORD).
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = ENV["SMTP_ADDRESS"].present?
+  config.action_mailer.smtp_settings = {
+    address: ENV["SMTP_ADDRESS"], port: ENV.fetch("SMTP_PORT", 587).to_i,
+    user_name: ENV["SMTP_USERNAME"], password: ENV["SMTP_PASSWORD"],
+    authentication: :plain, enable_starttls_auto: true
+  }
+  config.action_mailer.default_options = { from: ENV.fetch("MAIL_FROM", "Parallex <hello@parallexllc.com>") }
 end

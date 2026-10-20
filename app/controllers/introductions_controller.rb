@@ -8,6 +8,11 @@ class IntroductionsController < ApplicationController
     return redirect_to(thanks_introduction_path) if @lead.website.present? # bots fill the hidden field
     @lead.source = "site"
     if @lead.save
+      begin
+        LeadMailer.new_lead(@lead).deliver_now
+      rescue => e # the lead is already saved; never lose it to a mail failure
+        Rails.logger.error("lead alert failed for lead #{@lead.id}: #{e.class}: #{e.message}")
+      end
       redirect_to thanks_introduction_path
     else
       render :new, status: :unprocessable_entity
