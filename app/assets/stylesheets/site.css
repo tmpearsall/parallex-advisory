@@ -40,3 +40,6 @@ textarea{min-height:150px}
 .page{padding:72px 0 96px}
 table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line)}
 @media(max-width:760px){.cols{grid-template-columns:1fr}nav a:not(.btn){display:none}.hero .wrap{padding-top:70px;padding-bottom:70px}}
+.muted{opacity:.7;font-size:.95em}
+.post-card{padding:18px 0;border-top:1px solid rgba(128,128,128,.25)}
+.post-card h3{margin:0 0 4px}

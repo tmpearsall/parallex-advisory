@@ -1,0 +1,11 @@
+<% content_for :title, "Writing" %>
+<section class="wrap prose">
+  <h1>Writing</h1>
+  <% @posts.each do |post| %>
+    <article class="post-card">
+      <h3><%= link_to post.title, post_path(post) %></h3>
+      <p class="muted"><%= post.published_at.strftime("%B %-d, %Y") %></p>
+      <p><%= post.summary %></p>
+    </article>
+  <% end %>
+</section>

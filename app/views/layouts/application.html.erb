@@ -20,6 +20,7 @@
       <nav>
         <%= link_to "How I work", how_path %>
         <%= link_to "About", about_path %>
+        <%= link_to "Writing", posts_path if Post.published.exists? %>
         <%= link_to "Request an introduction", new_introduction_path, class: "btn small" %>
       </nav>
     </div>
