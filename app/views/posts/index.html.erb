@@ -1,15 +1,31 @@
 <% content_for :title, "Blog" %>
-<section class="wrap prose">
+<section class="page"><div class="wrap">
+  <p class="crumbs"><%= link_to "Home", root_path %> / Blog</p>
   <h1>Blog</h1>
+  <p class="lede">How to judge technology when you are the one writing the check. Plain language, one idea at a time.</p>
+
+  <% if @tags.any? %>
+    <div class="filters" role="navigation" aria-label="Filter posts by topic">
+      <%= link_to "All", posts_path, class: "chip#{' on' unless @tag}" %>
+      <% @tags.each do |t| %><%= link_to t, posts_path(tag: t), class: "chip#{' on' if t == @tag}" %><% end %>
+    </div>
+  <% end %>
+
   <% if @posts.empty? %>
-    <p>The first posts are in preparation. They are about what to ask when a technology deal reaches a family office.</p>
-    <p><%= link_to "Request an introduction", new_introduction_path, class: "btn" %></p>
+    <div class="empty"><p>No posts in this topic yet.</p><p><%= link_to "See all posts", posts_path %></p></div>
+  <% else %>
+    <div class="posts">
+      <% @posts.each do |post| %>
+        <article class="pc">
+          <% if post.image_url.present? %><a class="cover" href="<%= post_path(post) %>" tabindex="-1" aria-hidden="true"><img src="<%= post.image_url %>" alt="" loading="lazy"></a><% else %><span class="cover"></span><% end %>
+          <div class="body">
+            <p class="date"><%= post.published_at.strftime("%B %-d, %Y") %></p>
+            <h3><%= link_to post.title, post_path(post) %></h3>
+            <p><%= truncate(post.summary.to_s, length: 150) %></p>
+            <% if post.tags.to_a.any? %><ul class="chips"><% post.tags.each do |t| %><li class="chip"><%= t %></li><% end %></ul><% end %>
+          </div>
+        </article>
+      <% end %>
+    </div>
   <% end %>
-  <% @posts.each do |post| %>
-    <article class="post-card">
-      <h3><%= link_to post.title, post_path(post) %></h3>
-      <p class="muted"><%= post.published_at.strftime("%B %-d, %Y") %></p>
-      <p><%= post.summary %></p>
-    </article>
-  <% end %>
-</section>
+</div></section>

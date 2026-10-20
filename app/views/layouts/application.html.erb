@@ -10,7 +10,7 @@
   <%= csp_meta_tag %>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <%= stylesheet_link_tag "site", "data-turbo-track": "reload" %>
 </head>
 <body>
@@ -28,8 +28,27 @@
   <main><%= yield %></main>
   <footer class="foot">
     <div class="wrap">
-      <span>© <%= Date.current.year %> Parallex LLC</span>
-      <span><%= link_to "Privacy", privacy_path %></span>
+      <div class="grid">
+        <div>
+          <h4>Parallex</h4>
+          <p>Technical due diligence and advisory for family offices. Every engagement has a written scope and fee. Every expert signs a non-disclosure agreement.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><%= link_to "How I work", how_path %></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Blog", posts_path %></li>
+            <li><%= link_to "Privacy", privacy_path %></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Talk to us</h4>
+          <p>Tell us what is on the table. We reply to every introduction.</p>
+          <p><%= link_to "Request an introduction", new_introduction_path, class: "btn small" %></p>
+        </div>
+      </div>
+      <div class="fine"><span>© <%= Date.current.year %> Parallex LLC</span><span>A company since 2009</span></div>
     </div>
   </footer>
 </body>

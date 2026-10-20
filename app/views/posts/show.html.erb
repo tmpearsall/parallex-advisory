@@ -1,9 +1,16 @@
 <% content_for :title, @post.title %>
-<article class="wrap prose">
+<div class="post-hero"><div class="wrap">
+  <p class="crumbs"><%= link_to "Home", root_path %> / <%= link_to "Blog", posts_path %></p>
+  <% if @post.tags.to_a.any? %><ul class="chips"><% @post.tags.each do |t| %><li><%= link_to t, posts_path(tag: t), class: "chip" %></li><% end %></ul><% end %>
   <h1><%= @post.title %></h1>
-  <p class="muted"><%= @post.published_at.strftime("%B %-d, %Y") %> · Troy M. Pearsall</p>
-  <% if @post.image_url.present? %><figure class="post-image"><img src="<%= @post.image_url %>" alt=""></figure><% end %>
+  <p class="muted"><%= @post.published_at.strftime("%B %-d, %Y") %> · <%= @post.author.presence || "Troy M. Pearsall" %> · <%= [(@post.body.to_s.split.size / 220.0).ceil, 1].max %> min read</p>
+</div></div>
+<% if @post.image_url.present? %><div class="post-cover"><img src="<%= @post.image_url %>" alt=""></div><% end %>
+<article class="post-body">
   <%= @post.body.include?("<p>") ? sanitize(@post.body, tags: %w[p ol ul li strong em a sup sub img figure table thead tbody tr th td h2 h3 blockquote br], attributes: %w[href src alt class id]) : simple_format(@post.body) %>
-  <p><%= link_to "Request an introduction", new_introduction_path, class: "btn" %></p>
-  <p><%= link_to "All posts", posts_path %></p>
+  <div class="cta-band">
+    <h3>Have a deal where the technology is the open question?</h3>
+    <%= link_to "Request an introduction", new_introduction_path, class: "btn" %>
+  </div>
+  <p><%= link_to "← All posts", posts_path %></p>
 </article>
