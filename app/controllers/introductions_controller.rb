@@ -11,7 +11,7 @@ class IntroductionsController < ApplicationController
       begin
         LeadMailer.new_lead(@lead).deliver_now
       rescue => e # the lead is already saved; never lose it to a mail failure
-        Rails.logger.error("lead alert failed for lead #{@lead.id}: #{e.class}: #{e.message}")
+        Rails.logger.error("lead alert failed for lead #{@lead.id}: #{e.class}: #{e.message} (smtp host set: #{ENV["SMTP_ADDRESS"].present?}, user set: #{ENV["SMTP_USERNAME"].present?}, password length: #{ENV["SMTP_PASSWORD"].to_s.size})")
       end
       redirect_to thanks_introduction_path
     else
