@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "leads#index"
     resources :leads, only: %i[index show update]
+    resources :posts, only: :show
   end
   get "up" => "rails/health#show", as: :rails_health_check
 end
