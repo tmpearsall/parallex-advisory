@@ -4,5 +4,5 @@
   <p class="muted"><%= @post.published_at.strftime("%B %-d, %Y") %> · Troy M. Pearsall</p>
   <%= @post.body.include?("<p>") ? sanitize(@post.body) : simple_format(@post.body) %>
   <p><%= link_to "Request an introduction", new_introduction_path, class: "btn" %></p>
-  <p><%= link_to "All writing", posts_path %></p>
+  <p><%= link_to "All posts", posts_path %></p>
 </article>

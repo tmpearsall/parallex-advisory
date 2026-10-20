@@ -1,6 +1,10 @@
-<% content_for :title, "Writing" %>
+<% content_for :title, "Blog" %>
 <section class="wrap prose">
-  <h1>Writing</h1>
+  <h1>Blog</h1>
+  <% if @posts.empty? %>
+    <p>The first posts are in preparation. They are about what to ask when a technology deal reaches a family office.</p>
+    <p><%= link_to "Request an introduction", new_introduction_path, class: "btn" %></p>
+  <% end %>
   <% @posts.each do |post| %>
     <article class="post-card">
       <h3><%= link_to post.title, post_path(post) %></h3>
