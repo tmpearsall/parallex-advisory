@@ -1,8 +1,9 @@
 <% content_for :title, "Terms of use" %>
-<div class="page"><div class="wrap prose">
-  <h1>Terms of use</h1>
-  <p class="muted">Effective October 20, 2026</p>
-  <p>These terms govern your use of this website, which Parallex LLC, a Virginia limited liability company ("Parallex," "we"), operates. By using the site you agree to them. If you do not agree, please do not use it.</p>
+<%= render "shared/page_hero", eyebrow: "The ground rules", title: "Terms of use", lede: "How you may use this site." %>
+<div class="page"><div class="wrap">
+<div class="legal">
+<p class="muted">Effective October 20, 2026</p>
+<p>These terms govern your use of this website, which Parallex LLC, a Virginia limited liability company ("Parallex," "we"), operates. By using the site you agree to them. If you do not agree, please do not use it.</p>
 
   <h2>What this site is</h2>
   <p>The site describes our work and publishes our writing. It is general information. It is not investment, legal, tax or accounting advice, and nothing on it is an offer to sell, or a solicitation to buy, any security. Do not make an investment decision based on what you read here.</p>
@@ -33,4 +34,5 @@
 
   <h2>Contact</h2>
   <p>To reach us about these terms or anything on the site, use the <%= link_to "introduction form", new_introduction_path %>.</p>
+</div>
 </div></div>

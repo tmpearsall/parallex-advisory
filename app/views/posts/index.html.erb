@@ -1,8 +1,6 @@
 <% content_for :title, "Blog" %>
+<%= render "shared/page_hero", eyebrow: "Writing", title: "Blog", lede: "How to judge technology when you are the one writing the check. Plain language, one idea at a time." %>
 <section class="page"><div class="wrap">
-  <p class="crumbs"><%= link_to "Home", root_path %> / Blog</p>
-  <h1>Blog</h1>
-  <p class="lede">How to judge technology when you are the one writing the check. Plain language, one idea at a time.</p>
 
   <% if @tags.any? %>
     <div class="filters" role="navigation" aria-label="Filter posts by topic">

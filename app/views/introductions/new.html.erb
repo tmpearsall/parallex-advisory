@@ -1,7 +1,6 @@
 <% content_for :title, "Request an introduction" %>
-<div class="page"><div class="wrap">
-  <h1>Request an introduction</h1>
-  <p class="prose">Tell me a little about you and what you are weighing. I read every note and reply personally.</p>
+<%= render "shared/page_hero", eyebrow: "Start here", title: "Request an introduction", lede: "Tell me a little about you and what you are weighing. I read every note and reply personally." %>
+<div class="page"><div class="wrap split">
   <%= form_with model: @lead, url: introduction_path, class: "intro" do |f| %>
     <% if @lead.errors.any? %><div class="errors"><%= @lead.errors.full_messages.to_sentence %></div><% end %>
     <%= f.text_field :website, class: "hp", tabindex: -1, autocomplete: "off" %>
@@ -13,4 +12,13 @@
     <%= f.label :message, "What are you weighing?" %><%= f.text_area :message, required: true %>
     <p><%= f.submit "Send", class: "btn" %></p>
   <% end %>
+
+  <aside class="side card">
+    <h3>What to expect</h3>
+    <ul class="facts">
+      <li><b>A personal reply</b>I read every note myself.</li>
+      <li><b>No charge</b>for the first conversation.</li>
+      <li><b>Discretion</b>Your deal stays between us.</li>
+    </ul>
+  </aside>
 </div></div>

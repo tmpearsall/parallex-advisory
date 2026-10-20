@@ -1,12 +1,24 @@
 <% content_for :title, "About" %>
-<div class="page"><div class="wrap prose">
-  <h1>About</h1>
-  <p>I started writing software at thirteen, and I have been building and running technology for 43 years. I have done technical due diligence since 2000. For more than a decade I worked at In-Q-Tel, the venture firm that finds technology for the intelligence community, where much of the work was matching a company to a customer who needed it.</p>
-  <p>I started attending family office events in 2018, and that is where I learned how these offices decide: a principal, a family, sometimes a shared team, and a technical question nobody in the room can answer. Parallex exists for that question.</p>
-  <p>Parallex has been a company since 2009. I left In-Q-Tel on the last day of 2016, and I could not consult through Parallex while I was there or during the year of contract work that followed. So it stayed small: three investments between 2010 and about 2013, and a few small projects. Each of those investments was cleared with In-Q-Tel's general counsel before I made it. Now it is where I do this work. My wife and I own Parallex. Most engagements are done by a team built for the problem in front of us, and we bring in experts as the work requires. You do not get a standing bench. You get the people your deal needs.</p>
+<%= render "shared/page_hero", eyebrow: "About", title: "A second view of the technology, taken independently of the people selling it." %>
+<div class="page"><div class="wrap split">
+  <div class="prose-col">
+    <p>I started writing software at thirteen, and I have been building and running technology for 43 years. I have done technical due diligence since 2000. For more than a decade I worked at In-Q-Tel, the venture firm that finds technology for the intelligence community, where much of the work was matching a company to a customer who needed it.</p>
+    <p>I started attending family office events in 2018, and that is where I learned how these offices decide: a principal, a family, sometimes a shared team, and a technical question nobody in the room can answer. Parallex exists for that question.</p>
+    <p>Parallex has been a company since 2009. I left In-Q-Tel on the last day of 2016, and I could not consult through Parallex while I was there or during the year of contract work that followed. So it stayed small: three investments between 2010 and about 2013, and a few small projects. Each of those investments was cleared with In-Q-Tel's general counsel before I made it. Now it is where I do this work. My wife and I own Parallex. Most engagements are done by a team built for the problem in front of us, and we bring in experts as the work requires. You do not get a standing bench. You get the people your deal needs.</p>
 
-  <h3>The name</h3>
-  <p><em>Parallax</em> is looking at one thing from two angles. The offset between the views tells you its depth. That is the job: a second view of a company's technology, taken independently of the people selling it.</p>
+    <h2>The name</h2>
+    <p><em>Parallax</em> is looking at one thing from two angles. The offset between the views tells you its depth. That is the job: a second view of a company's technology, taken independently of the people selling it.</p>
 
-  <p><%= link_to "Request an introduction", new_introduction_path, class: "btn" %></p>
+    <p><%= link_to "Request an introduction", new_introduction_path, class: "btn" %></p>
+  </div>
+
+  <aside class="side card">
+    <h3>At a glance</h3>
+    <ul class="facts">
+      <li><b>43 years</b>building and running technology</li>
+      <li><b>Since 2000</b>technical due diligence</li>
+      <li><b>A decade and more</b>at In-Q-Tel</li>
+      <li><b>Since 2009</b>Parallex, a company</li>
+    </ul>
+  </aside>
 </div></div>

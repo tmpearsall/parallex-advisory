@@ -1,8 +1,9 @@
 <% content_for :title, "Privacy" %>
-<div class="page"><div class="wrap prose">
-  <h1>Privacy</h1>
-  <p class="muted">Effective October 20, 2026</p>
-  <p>This page says what Parallex LLC collects when you use this site, what we do with it, and who else touches it. We keep it short because we collect very little.</p>
+<%= render "shared/page_hero", eyebrow: "Your information", title: "Privacy", lede: "What we collect, what we do with it, and who else touches it." %>
+<div class="page"><div class="wrap">
+<div class="legal">
+<p class="muted">Effective October 20, 2026</p>
+<p>This page says what Parallex LLC collects when you use this site, what we do with it, and who else touches it. We keep it short because we collect very little.</p>
 
   <h2>What we collect</h2>
   <p>If you request an introduction, we collect what you type into the form: your name, email address, organization, role, the kind of investor you are, and your message. That is all the form asks for. Please do not put confidential deal information, account numbers or passwords in it. If we work together, confidential material goes under a signed agreement, not through the website.</p>
@@ -32,4 +33,5 @@
 
   <h2>Changes</h2>
   <p>If we change this page, we will change the date at the top. Our <%= link_to "terms of use", terms_path %> govern your use of the site.</p>
+</div>
 </div></div>
