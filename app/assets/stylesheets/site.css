@@ -174,3 +174,6 @@ sup .cite{text-decoration:none;font-weight:600;color:var(--brass)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
 .hint{margin:-2px 0 8px;font-size:.92rem;color:var(--mute)}
+
+.portrait{width:100%;height:auto;border-radius:var(--r);margin:0 0 18px;border:1px solid var(--line)}
+.portrait-fig{margin:0 0 18px}.portrait-fig .portrait{margin:0 0 8px}.portrait-fig figcaption{font-size:.82rem;color:var(--mute)}
