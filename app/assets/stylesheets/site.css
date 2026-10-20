@@ -43,3 +43,9 @@ table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;p
 .muted{opacity:.7;font-size:.95em}
 .post-card{padding:18px 0;border-top:1px solid rgba(128,128,128,.25)}
 .post-card h3{margin:0 0 4px}
+
+.post-image{margin:20px 0}
+.post-image img{max-width:100%;height:auto;display:block}
+.prose table{border-collapse:collapse;width:100%;font-size:.95em;margin:16px 0}
+.prose th,.prose td{border:1px solid rgba(128,128,128,.35);padding:6px 8px;text-align:left}
+sup .cite{text-decoration:none}
