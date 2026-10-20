@@ -1,6 +1,6 @@
 class Lead < ApplicationRecord
   STAGES = %w[inquiry intro_call proposal signed active handoff declined].freeze
-  INVESTOR_TYPES = ["Family office", "Private equity", "Venture capital", "Search fund", "Other"].freeze
+  INVESTOR_TYPES = ["Single-family office (professionally led)", "Multi-family office", "Family-run office (invests near the family business)", "Advisor or deal lead to a family office", "Other"].freeze
 
   attr_accessor :website # honeypot
 
