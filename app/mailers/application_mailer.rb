@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "Parallex <hello@parallexllc.com>"
+  default from: -> { ENV.fetch("MAIL_FROM", "Parallex <hello@parallexllc.com>") }
   layout false
 end
