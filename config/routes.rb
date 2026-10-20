@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "how-i-work", to: "pages#how", as: :how
   get "about", to: "pages#about"
   get "privacy", to: "pages#privacy"
+  get "terms", to: "pages#terms"
   resources :posts, only: %i[index show], path: "blog"
   get "writing", to: redirect("/blog")
   get "writing/:id", to: redirect("/blog/%{id}")
