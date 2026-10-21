@@ -75,7 +75,7 @@ textarea{min-height:170px}
 .foot{background:var(--sand);color:#5a5140;padding:64px 0 36px;font-size:15px;border-top:1px solid #e2d3b4}
 .foot a{color:var(--navy);text-decoration-color:var(--brass-bright)}
 .foot a:hover{color:var(--brass)}
-.foot .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
+.foot .grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.3fr;gap:36px}
 .foot h4{color:var(--navy);font:600 12px var(--sans);letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px}
 .foot ul{list-style:none;margin:0;padding:0}.foot li{margin:7px 0}
 .foot .btn{background:var(--navy);color:#fff!important}.foot .btn:hover{background:var(--brass)}
