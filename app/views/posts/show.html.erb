@@ -3,7 +3,7 @@
   <p class="crumbs"><%= link_to "Home", root_path %> / <%= link_to "Blog", posts_path %></p>
   <% if @post.tags.to_a.any? %><ul class="chips"><% @post.tags.each do |t| %><li><%= link_to t, posts_path(tag: t), class: "chip" %></li><% end %></ul><% end %>
   <h1><%= @post.title %></h1>
-  <p class="muted"><%= @post.published_at.strftime("%B %-d, %Y") %> · <%= @post.author.presence || "Troy M. Pearsall" %> · <%= [(@post.body.to_s.split.size / 220.0).ceil, 1].max %> min read</p>
+  <p class="muted"><%= @post.published_at.strftime("%B %-d, %Y") %> · <%= @post.author.presence || "Troy M. Pearsall" %> · <%= reading_minutes(@post.body) %> min read</p>
 </div></div>
 <% if @post.image_url.present? %><div class="post-cover"><img src="<%= @post.image_url %>" alt=""></div><% end %>
 <article class="post-body">

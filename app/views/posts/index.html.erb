@@ -17,7 +17,7 @@
         <article class="pc">
           <% if post.image_url.present? %><a class="cover" href="<%= post_path(post) %>" tabindex="-1" aria-hidden="true"><img src="<%= post.image_url %>" alt="" loading="lazy"></a><% else %><span class="cover"></span><% end %>
           <div class="body">
-            <p class="date"><%= post.published_at.strftime("%B %-d, %Y") %></p>
+            <p class="date"><%= post.published_at.strftime("%B %-d, %Y") %> &middot; <%= reading_minutes(post.body) %> min read</p>
             <h3><%= link_to post.title, post_path(post) %></h3>
             <p><%= truncate(post.summary.to_s, length: 150) %></p>
             <% if post.tags.to_a.any? %><ul class="chips"><% post.tags.each do |t| %><li class="chip"><%= t %></li><% end %></ul><% end %>
