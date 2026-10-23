@@ -3,7 +3,22 @@
 <head>
   <title><%= content_for?(:title) ? "#{yield(:title)} · Parallex" : "Parallex — Technical leadership for investors" %></title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Technical diligence and fractional CTO leadership for family offices and the businesses they back.">
+  <% site_desc = "Technical diligence and fractional CTO leadership for family offices and the businesses they back." %>
+  <meta name="description" content="<%= content_for?(:description) ? content_for(:description) : site_desc %>">
+  <%# Link previews (LinkedIn, Facebook, X): a post sets its own image with content_for :og_image; every other page uses the logo. %>
+  <% og_title = content_for?(:title) ? "#{content_for(:title)} · Parallex" : "Parallex — Technical leadership for investors" %>
+  <% og_desc = content_for?(:description) ? content_for(:description) : site_desc %>
+  <% og_image = content_for?(:og_image) ? content_for(:og_image) : "#{request.base_url}/logo-200.jpg" %>
+  <meta property="og:site_name" content="Parallex">
+  <meta property="og:type" content="<%= content_for?(:og_type) ? content_for(:og_type) : 'website' %>">
+  <meta property="og:title" content="<%= og_title %>">
+  <meta property="og:description" content="<%= og_desc %>">
+  <meta property="og:url" content="<%= request.base_url + request.path %>">
+  <meta property="og:image" content="<%= og_image %>">
+  <meta name="twitter:card" content="<%= content_for?(:og_image) ? 'summary_large_image' : 'summary' %>">
+  <meta name="twitter:title" content="<%= og_title %>">
+  <meta name="twitter:description" content="<%= og_desc %>">
+  <meta name="twitter:image" content="<%= og_image %>">
   <link rel="icon" href="/logo-200.jpg">
   <link rel="apple-touch-icon" href="/logo-200.jpg">
   <%= csrf_meta_tags %>

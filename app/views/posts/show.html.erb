@@ -1,4 +1,7 @@
 <% content_for :title, @post.title %>
+<% content_for :description, truncate(@post.summary.to_s, length: 150) if @post.summary.present? %>
+<% content_for :og_image, @post.image_url if @post.image_url.present? %>
+<% content_for :og_type, "article" %>
 <div class="post-hero"><div class="wrap">
   <p class="crumbs"><%= link_to "Home", root_path %> / <%= link_to "Blog", posts_path %></p>
   <% if @post.tags.to_a.any? %><ul class="chips"><% @post.tags.each do |t| %><li><%= link_to t, posts_path(tag: t), class: "chip" %></li><% end %></ul><% end %>
