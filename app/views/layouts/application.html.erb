@@ -8,7 +8,8 @@
   <%# Link previews (LinkedIn, Facebook, X): a post sets its own image with content_for :og_image; every other page uses the logo. %>
   <% og_title = content_for?(:title) ? "#{content_for(:title)} · Parallex" : "Parallex — Technical leadership for investors" %>
   <% og_desc = content_for?(:description) ? content_for(:description) : site_desc %>
-  <% og_image = content_for?(:og_image) ? content_for(:og_image) : "#{request.base_url}/logo-200.jpg" %>
+  <% og_image = content_for?(:og_image) ? content_for(:og_image).to_s : "#{request.base_url}/logo-200.jpg" %>
+  <% og_image = request.base_url + og_image if og_image.start_with?("/") %>
   <meta property="og:site_name" content="Parallex">
   <meta property="og:type" content="<%= content_for?(:og_type) ? content_for(:og_type) : 'website' %>">
   <meta property="og:title" content="<%= og_title %>">
