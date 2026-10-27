@@ -10,7 +10,7 @@
 </div></div>
 <% if @post.image_url.present? %><div class="post-cover"><img src="<%= @post.image_url %>" alt=""></div><% end %>
 <article class="post-body">
-  <%= @post.body.include?("<p>") ? sanitize(@post.body, tags: %w[p ol ul li strong em a sup sub img figure table thead tbody tr th td h2 h3 blockquote br], attributes: %w[href src alt class id]) : simple_format(@post.body) %>
+  <%= @post.body.include?("<p>") ? sanitize(@post.body, tags: %w[p ol ul li strong em a sup sub img figure figcaption div iframe table thead tbody tr th td h2 h3 blockquote br], attributes: %w[href src alt class id title allow allowfullscreen loading referrerpolicy]) : simple_format(@post.body) %>
   <div class="cta-band">
     <h3>Have a deal where the technology is the open question?</h3>
     <%= link_to "Request an introduction", new_introduction_path, class: "btn" %>

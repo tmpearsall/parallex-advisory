@@ -177,3 +177,9 @@ sup .cite{text-decoration:none;font-weight:600;color:var(--brass)}
 
 .portrait{width:100%;height:auto;border-radius:var(--r);margin:0 0 18px;border:1px solid var(--line)}
 .portrait-fig{margin:0 0 18px}.portrait-fig .portrait{margin:0 0 8px}.portrait-fig figcaption{font-size:.82rem;color:var(--mute)}
+
+/* narrated-video embed in posts */
+.post-body .video-figure { margin: 1.75em 0; }
+.post-body .video-frame { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.post-body .video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.post-body .video-figure figcaption { font-size: 0.9em; opacity: 0.8; margin-top: 0.5em; }
